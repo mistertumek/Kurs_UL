@@ -1,27 +1,9 @@
 (function (global) {
 	var Cat = null, Bird = null, Worm = null;
 
-	var Cat={
-        eat: function(zwierzak)
- {
-           
- if(((zwierzak.type =="Worm") && (this.type =="Bird")) || ((zwierzak.type =="Bird") && (this.type =="Cat")))
-    return "Mniam!";
-    else return "Blee!";        
- }
-        
-    }, Bird, Worm;
-    
-    
-    
-    if (!global.UAM) {
+	if (!global.UAM) {
 		global.UAM = {};
 	}
-    Bird = Object.create(Cat);
-    Worm = Object.create(Bird);
-    Bird.type = "Bird";
-    Worm.type = "Worm";
-    Cat.type = "Cat";
 
 	global.UAM.Cat = Cat;
 	global.UAM.Bird = Bird;
