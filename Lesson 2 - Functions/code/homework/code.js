@@ -64,9 +64,12 @@
         var arraytab= [];
         global.UAM.aircrafts.forEach(function(aircraft){
             if(aircraft.services != null){
-               for(var i=0; i< aircraft.services.length-1; i++){
+               for(var i=0; i< aircraft.services.length; i++){
+                   if (aircraft.services[i].timeToExecute <= maxTimeToExecute){
                    arraytab.push(aircraft);
                    break;
+                   }
+                   
                } 
                 
                
@@ -75,6 +78,7 @@
             
             
         });
+        return arraytab;
         
     };
 
