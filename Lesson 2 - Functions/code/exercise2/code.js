@@ -8,6 +8,21 @@
 	mapArray = function (array, callback, ctx) {
         var newArr = [];
         
+        if(ctx)
+        {
+            var c = callback.bind(ctx);
+            for (var a=0; a<array.length; a++){
+                newArr[a] = c(array[a],a,array);
+            }
+        }
+        else{
+            for( var i=0; i<array.length; i++){
+                
+                newArr[i] = callback(array[i],i,array);
+            }
+            
+        }
+        
         // add code for maping
         
         return newArr;

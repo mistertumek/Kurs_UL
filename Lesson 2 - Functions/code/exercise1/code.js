@@ -9,10 +9,17 @@
         var sum = 0;
         
         // !!! add all arguments to sum
-        
+        for (var a=0; a<arguments.length; a++){
+            sum = arguments[a]+sum;
+        }
         // !!! return function for use sum value as a base for next arythmetic operation but without change value of sum variable
         return function() {
+            for(var i=0; i<arguments.length; i++){
+                sum=arguments[i]+sum;
+            }
+            return sum;
         };
+        
 	};
 
 	global.UAM.addManyValues = addManyValues;
